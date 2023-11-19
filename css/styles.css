@@ -69,6 +69,7 @@ body {
 /* ============== HEADER STYLES ==============*/
  .page-header {
      border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
  }
  .header-container {
     display: flex;
@@ -97,6 +98,9 @@ body {
 .nav-list .link {
     font-weight: 500;
     line-height: 1.5;
+}
+.nav-link, .address-link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address {
 font-style: normal;
@@ -137,6 +141,8 @@ font-style: normal;
      url(../images/order/background-section.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    max-width: 1400px;
+    background-size: cover;
 }
 .order, .footer-page{
     background-color: #2e2f42;
@@ -184,7 +190,13 @@ font-style: normal;
 
 /* ================ ADVANTAGES STYLES ================ */
 .advantages-icon-wrap {
-padding: 24px 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 112px;
+
+/* padding: 24px 100px; */
+
 background-color: #F4F4FD;
 border: 1px solid  #8E8F99;
 border-radius: 4px;
@@ -267,16 +279,29 @@ margin-bottom: 8px;
 .social-list-item {
     width: 40px;
     height: 40px;
-    background-color: #4D5AE5;
-    border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* background-color: #4D5AE5; */
+    /* border-radius: 50%; */
+    /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
-.social-list-item:hover, .social-list-item:focus {
-    background-color: #404BBF;
-}
+
 .social-list-link {
-    display: block;
-    padding: 12px;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /* display: block;
+    padding: 12px; */
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: #404BBF;
 }
 .social-icon {
     fill: #F4F4FD;
@@ -303,29 +328,28 @@ margin-bottom: 8px;
     position: relative;
     overflow: hidden;
 }
-.overlay {
+
+.overlay-text {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    font-size: 16px;   
+    font-weight: 400;
+    line-height: 1.5;
+    color: #F4F4FD;
+    padding: 40px 32px;
     background-color: #4D5AE5;
 
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.overlay-text {
-    font-size: 16px;   
-    font-weight: 400;
-    line-height: 1.5;
-    color: #F4F4FD;
-    padding: 40px 32px 164px;
-}
 .portfolio-list-item:hover {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
     cursor: pointer;
 }
-.portfolio-list-item:hover .overlay {
+.portfolio-list-item:hover {
     transform: translateY(0);
 }
 .portfolio-text {
@@ -354,9 +378,12 @@ max-width: 264px;
 }
 .footer-container {
     display: flex;
-    column-gap: 120px;
+    align-items: baseline;
 }
-.footer-title {
+.left-content {
+    margin-right: 120px;
+}
+.social-text {
     font-size: 16px;
     color: #FFFFFF;
     line-height: 1.5;
@@ -366,14 +393,9 @@ max-width: 264px;
 .footer-social-list {
     gap: 16px;
 }
-.footer-social-list-item {
 
-}
-.footer-social-list-item:hover,
-.footer-social-list-item:focus {
+.footer-social-list-link:hover,
+.footer-social-list-link:focus {
     background-color: #31D0AA;
-}
-.footer-social-list-link {
-    padding: 8px;
 }
 /* ================ /FOOTER STYLES ======================*/
