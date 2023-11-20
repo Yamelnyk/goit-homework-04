@@ -143,6 +143,7 @@ font-style: normal;
     background-position: center;
     max-width: 1440px;
     background-size: cover;
+    margin: 0 auto;
 }
 .order, .footer-page{
     background-color: #2e2f42;
